@@ -16,10 +16,21 @@
     <hr>
     <label for="">Product Name :</label>
     <input type="text" name="" id="txtNewProductName">
-    <input type="button" value="Add New">
+    <input type="button" value="Add New" id="btnAddNew">
     <ol id="productList">
         <li>Pen</li>
         <li>Pencil</li>
     </ol>
+    <script>
+        function onBtnAddNewClick(){
+            var newProductName = document.getElementById('txtNewProductName').value;
+            var newProductEle = document.createElement('li');
+            newProductEle.innerText = newProductName;
+            document.getElementById('productList').appendChild(newProductEle);
+        }
+
+        var btnAddNew = document.getElementById('btnAddNew');
+        btnAddNew.addEventListener('click', onBtnAddNewClick);
+    </script>
 </body>
 </html>
