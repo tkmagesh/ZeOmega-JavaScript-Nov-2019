@@ -43,13 +43,15 @@
 
             }
 
-            function onTxtNumber1KeyUp() {
-                calculator.n1 = parseInt(document.getElementById('txtNumber1').value);
+            function onTxtNumber1KeyUp(evt) {
+                //calculator.n1 = parseInt(document.getElementById('txtNumber1').value);
+                calculator.n1 = parseInt(evt.target.value);
                 initiateCalculation();
             }
 
-            function onTxtNumber2KeyUp() {
-                calculator.n2 = parseInt(document.getElementById('txtNumber2').value);
+            function onTxtNumber2KeyUp(evt) {
+                //calculator.n2 = parseInt(document.getElementById('txtNumber2').value);
+                calculator.n2 = parseInt(evt.target.value);
                 initiateCalculation();
             }
 
