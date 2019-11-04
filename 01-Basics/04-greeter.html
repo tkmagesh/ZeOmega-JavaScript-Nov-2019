@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sample</title>
+</head>
+<body>
+    <h1>Greeter</h1>
+    <hr>
+    <label for="">User Name :</label>
+    <input type="text" name="" id="txtUserName">
+    <input type="button" value="Greet" id="btnGreet">
+    <span></span>
+    <div id="divMessage">[Greet Message]</div>
+    <script>
+        function greetUser() {
+            var txtEle = document.getElementById('txtUserName')
+            var userName = txtEle.value;
+            var greetMsg = 'Hi ' + userName + ', Have a nice day!'
+            var divElement = document.getElementById('divMessage');
+            divElement.innerText = greetMsg;
+        }
+        var btnGreet = document.getElementById('btnGreet');
+        btnGreet.addEventListener('click', greetUser);
+    </script>
+</body>
+</html>
