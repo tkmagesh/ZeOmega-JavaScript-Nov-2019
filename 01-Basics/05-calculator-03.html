@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <hr>
+    <input type="number" id="txtNumber1">
+    <input type="number" id="txtNumber2">
+    <br>
+    <input type="button" value="Add" id="btnAdd">
+    <input type="button" value="Subtract" id="btnSubtract">
+    <input type="button" value="Multiply" id="btnMultiply">
+    <input type="button" value="Divide" id="btnDivide">
+    <div id="divResult">[Result]</div>
+    <script>
+
+        var calculator = {
+            n1 : 0,
+            n2 : 0,
+            result : 0,
+
+            add : function(){
+                this.result = this.n1 + this.n2;
+            },
+
+            subtract: function () {
+                this.result = this.n1 - this.n2;
+            },
+
+        }
+       
+        function onTxtNumber1Change(){
+            calculator.n1 = parseInt(document.getElementById('txtNumber1').value);
+        }
+
+        function onTxtNumber2Change() {
+            calculator.n2 = parseInt(document.getElementById('txtNumber2').value);
+        }
+
+        function onBtnAddClick(){
+            calculator.add();
+            display(calculator.result);
+        }
+
+         function onBtnSubtractClick() {
+            calculator.subtract();
+            display(calculator.result);
+        }
+
+        function display(result){
+            document.getElementById('divResult').innerText = result;
+        }
+
+        var txtNumber1 = document.getElementById('txtNumber1');
+        txtNumber1.addEventListener('change', onTxtNumber1Change);
+
+        var txtNumber2 = document.getElementById('txtNumber2');
+        txtNumber2.addEventListener('change', onTxtNumber2Change);
+        
+        var btnAdd = document.getElementById('btnAdd');
+        btnAdd.addEventListener('click', onBtnAddClick);
+
+        var btnSubtract = document.getElementById('btnSubtract');
+        btnSubtract.addEventListener('click', onBtnSubtractClick);
+    </script>
+</body>
+</html>
