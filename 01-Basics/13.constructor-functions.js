@@ -21,3 +21,19 @@ function Employee(id, name, salary){
 		console.log('id = ', this.id, ' name = ', this.name, ' salary = ', this.salary);
     };
 }
+
+var Employee = (function(){
+    function Employee(id, name, salary) {
+        //this -> new object
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    Employee.prototype.display = function () {
+        console.log('id = ', this.id, ' name = ', this.name, ' salary = ', this.salary);
+    };
+    return Employee;
+})();
+
+var emp = new Employee()
